@@ -6,8 +6,20 @@ import authRoutes from "./authRoutes.js"; // Importando as rotas de autenticaç�
 
 const router = Router();
 
-router.use("/auth", clienteRoutes);
-router.use("/clientes", clienteRoutes);
-router.use("/endereço", enderecoRoutes);
+router.use(
+  "/auth",
+  // #swagger.tags = ['autenticação']
+  authRoutes
+);
+router.use(
+  "/clientes",
+  //#swagger.tags=['clientes']
+  clienteRoutes
+);
+router.use(
+  "/endereco",
+  //#swagger.tags=['endereços']
+  enderecoRoutes
+);
 
 export default router;

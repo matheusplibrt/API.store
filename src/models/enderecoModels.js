@@ -1,5 +1,6 @@
 import { DataTypes } from "sequelize";
 import sequelize from "../config/db.js";
+import Cliente from "./clienteModel.js"; // Importando o modelo Cliente
 
 const Endereco = sequelize.define(
   "Endereco",
@@ -28,11 +29,11 @@ const Endereco = sequelize.define(
       allowNull: false,
     },
     estado: {
-      type: DataTypes.STRING(50),
+      type: DataTypes.STRING(2),
       allowNull: false,
     },
     cep: {
-      type: DataTypes.STRING(10),
+      type: DataTypes.STRING(9),
       allowNull: false,
     },
   },
@@ -44,7 +45,7 @@ const Endereco = sequelize.define(
   }
 );
 //associação de cliente
-Endereço.belongsTo(Cliente, {
+Endereco.belongsTo(Cliente, {
   foreignKey: "cliente_id", // Chave estrangeira na tabela Endereco
   as: "cliente", // Alias para a associação
 });

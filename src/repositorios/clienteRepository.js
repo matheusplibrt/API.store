@@ -1,4 +1,4 @@
-import { Cliente } from "../models/clienteModel.js";
+import Cliente from "../models/clienteModel.js";
 
 export async function findAllClientes() {
   return await Cliente.findAll();
@@ -38,5 +38,5 @@ export async function deleteCliente(id) {
     return null; // Cliente não encontrado
   }
   await Cliente.destroy();
-  return null;
+  return cliente;
 }

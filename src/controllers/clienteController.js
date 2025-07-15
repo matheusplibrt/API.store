@@ -1,4 +1,4 @@
-import * as clienteRepository from "../repositories/clienteRepository.js";
+import * as clienteRepository from "../repositorios/clienteRepository.js";
 
 export async function getAllClientes(req, res) {
   try {
@@ -44,7 +44,7 @@ export async function createCliente(req, res) {
 
     return res
       .status(201)
-      .json({ message: "cliente criado com sucessp", data: cliente });
+      .json({ message: "cliente criado com sucesso", data: cliente });
   } catch (error) {
     console.error("Erro ao criar cliente:", error);
 
@@ -68,9 +68,10 @@ export async function updateCliente(req, res) {
       return res.status(404).json({ message: "Cliente não encontrado" });
     }
 
-    return res
-      .status(404)
-      .json({ message: "Cliente atualizado com sucesso", data: cliente });
+    return res.json({
+      message: "Cliente atualizado com sucesso",
+      data: cliente,
+    });
   } catch (error) {
     console.log("Erro ao atualizar cliente:", error);
     return res.status(400).json({ message: "Erro ao atualizar cliente" });
@@ -88,9 +89,7 @@ export async function deleteCliente(req, res) {
       return res.status(404).json({ message: "Cliente não encontrado" });
     }
 
-    return res
-      .status(200)
-      .json({ message: "Cliente deletado com sucesso", data: cliente });
+    return res.json({ message: "Cliente deletado com sucesso", data: cliente });
   } catch (error) {
     console.error("Erro ao deletar cliente:", error);
     return res.status(500).json({ message: "Erro ao deletar cliente" });

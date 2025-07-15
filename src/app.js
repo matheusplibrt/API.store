@@ -1,4 +1,4 @@
-import express, { Router } from "express";
+import express from "express";
 import sequelize from "./config/db.js";
 import router from "./routes/router.js";
 import cors from "cors";

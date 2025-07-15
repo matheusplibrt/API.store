@@ -1,7 +1,7 @@
 import Usuario from "../models/usuarioModel.js";
 
 export async function findUserByEmail(email) {
-  return await Usuario.findOne(id, { attributes: ["id", "nome", "email"] });
+  return await Usuario.findOne({ where: { email } });
 }
 
 export async function findUserById(id) {

@@ -19,7 +19,7 @@ export async function findEnderecoById(id) {
   });
 }
 
-export async function createEndereco({ cliente_id, rua, cidade, estado, cep }) {
+/* export async function createEndereco({ cliente_id, rua, cidade, estado, cep }) {
   return await Endereco.create({ cliente_id, rua, cidade, estado, cep });
 }
 
@@ -47,4 +47,4 @@ export async function deleteEndereco(id) {
 
   await Endereco.destroy();
   return null;
-}
+}*/
